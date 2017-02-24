@@ -25,6 +25,13 @@ background-color:black;
 color: white;
 }
 </style>
+<style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -41,7 +48,48 @@ color: white;
   </div>
   </div>
 </nav>
-   <div  class="sidenav" style="float:left";>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="a.jpg" alt="Chania" width="500" height="200">
+      </div>
+
+      <div class="item">
+        <img src="light-1997896_340.jpg" alt="Chania" width="500" height="200">
+      </div>
+    
+      <div class="item">
+        <img src="unnamed" alt="Flower" width="500" height="200">
+      </div>
+
+      <div class="item">
+        <img src="a.jpg" alt="Flower" width="500" height="200">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div  class="sidenav" style="float:left";>
       <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
         <li><a href="#">STUDENT</a></li>
         <li><a href="#">FACULTY</a></li>
@@ -50,12 +98,19 @@ color: white;
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
 <form  action="./validate.jsp" method=post>
+USERNAME:<br>
+<input type="text" name="E-MAIL" placeholder="ABC@gmail.com">
+<br><br>
 E-MAIL:<br>
 <input type="text" name="PASSWORD" placeholder="***">
 <br><br>
 PASSWORD:<br>
 <input type="text" name="E-MAIL" placeholder="ABC@gmail.com">
 <br><br>
+RE-ENTER PASSWORD:<br>
+<input type="text" name="PASSWORD" placeholder="***">
+<br>
+<br>
 <center>
 <p>
   <%

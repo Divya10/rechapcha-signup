@@ -20,9 +20,7 @@
 				remoteAddr, challenge, uresponse);
 
 		if (reCaptchaResponse.isValid()) {
-			String user = request
-					.getParameter("user");
-			out.print("CAPTCHA Validation Success! User "+user+" registered.");
+			
 		} else {
 			out.print("CAPTCHA Validation Failed! Try Again.");
 		}
