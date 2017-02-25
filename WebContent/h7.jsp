@@ -113,10 +113,10 @@ color: white;
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
  <input type="hidden" name="t2" id="t2" value="<%=request.getAttribute("t2")%>" />
 <input type="hidden" name="t3" id="E-mail" value="<%=request.getAttribute("t3")%>" />
-Successfully have logged with details :
-Type of Login: Staff
-Name of User:<%=request.getAttribute("t2")%>
-Email Id of User: <%=request.getAttribute("t3")%>
+Successfully have logged with details :<br>
+Type of Login: Staff<br>
+Name of User:<%=request.getAttribute("t2")%><br>
+Email Id of User: <%=request.getAttribute("t3")%><br>
 
 </div>
 </body>

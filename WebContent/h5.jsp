@@ -111,7 +111,7 @@ color: white;
       </ul>
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
-<input type=submit><a href=c.jspl><font color=red>CAPCHA NOT CORRECT</font></a>
+<input type=submit><a href=c.jsp><font color=red>CAPCHA NOT CORRECT</font></a>
 
 </div>
 </body>
