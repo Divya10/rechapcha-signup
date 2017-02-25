@@ -97,7 +97,7 @@ public class staff<Userdet> extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-		       response.sendRedirect("h1.html");
+		       response.sendRedirect("h2.jsp");
 		       
 
 		           } 

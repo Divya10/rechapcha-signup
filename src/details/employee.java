@@ -95,7 +95,7 @@ public class employee extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(empname);
-		       response.sendRedirect("h1.html");
+		       response.sendRedirect("h2.jsp");
 		       
 
 		           } 
