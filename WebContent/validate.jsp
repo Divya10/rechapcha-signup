@@ -20,6 +20,11 @@
 				remoteAddr, challenge, uresponse);
 
 		if (reCaptchaResponse.isValid()) {
+			String a= request.getParameter("Username");
+			String b= request.getParameter("E-mail");
+			String c= request.getParameter("Password");
+			String d= request.getParameter("Pass1");
+			
 			
 		} else {
 			out.print("CAPTCHA Validation Failed! Try Again.");
