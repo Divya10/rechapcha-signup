@@ -66,16 +66,17 @@ public class loginservlet extends HttpServlet {
 	      
 	       Query queryResult = session.createQuery("from student1");
 	       java.util.List allUsers;
-	       String pa,na;
+	       String pa,na="";
 	       int f;
 	       f=0;
-	       
+	       String n="";
 	       allUsers = queryResult.list();
 	       System.out.println(allUsers.size());
 	       for (int i = 0; i < allUsers.size(); i++) {
 	        student1 user = (student1) allUsers.get(i);
 	        pa=user.getStpass();
 	        na=user.getStemail();
+	        n=user.getStname();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcome");
@@ -89,8 +90,9 @@ public class loginservlet extends HttpServlet {
 	       if(f==1)
 	       {
 	    	   response.setContentType("text/html");
-		       request.setAttribute("t2", "");
-		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
+		       request.setAttribute("t2",n);
+		       request.setAttribute("t3",na);
+		       request.getRequestDispatcher("/h1.jsp").forward(request, response);
 
 	       }    	       
 	       else
