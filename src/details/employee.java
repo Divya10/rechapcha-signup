@@ -101,7 +101,7 @@ public class employee extends HttpServlet {
 		           } 
 		           else
 		           {   System.out.println("duplicate");
-		           response.sendRedirect("h2.html");
+		           response.sendRedirect("h8.jsp");
 		           }
 		            
 			 }   
@@ -112,11 +112,11 @@ public class employee extends HttpServlet {
 			System.out.println("pass do not match");
 			System.out.println(emppass);
 			System.out.println(emppass1);
-			 response.sendRedirect("h3.html");
+			 response.sendRedirect("h3.jsp");
 		}
 		}
 		else {
-			System.out.print("CAPTCHA Validation Failed! Try Again.");
+			response.sendRedirect("h5.jsp");
 		}
 		
 		}

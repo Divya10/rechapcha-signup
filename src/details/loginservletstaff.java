@@ -65,9 +65,10 @@ public class loginservletstaff extends HttpServlet {
 	      
 	       Query queryResult = session.createQuery("from staff1");
 	       java.util.List allUsers;
-	       String pa,na;
+	       String pa,na="";
 	       int f;
 	       f=0;
+	       String n="";
 	       
 	       allUsers = queryResult.list();
 	       System.out.println(allUsers.size());
@@ -75,6 +76,7 @@ public class loginservletstaff extends HttpServlet {
 	        staff1 user = (staff1) allUsers.get(i);
 	        pa=user.getStaffpass();
 	        na=user.getStaffemail();
+	        n=user.getStaffname();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcome");
@@ -88,13 +90,14 @@ public class loginservletstaff extends HttpServlet {
 	       if(f==1)
 	       {
 	    	   response.setContentType("text/html");
-		       request.setAttribute("t2", "");
-		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
+	    	   request.setAttribute("t2",n);
+		       request.setAttribute("t3",na);
+		       request.getRequestDispatcher("/h7.jsp").forward(request, response);
 
 	       }    	       
 	       else
 	       {
-	    	   response.sendRedirect("h4.html");
+	    	   response.sendRedirect("h4.jsp");
 	       }
 	       
 	     
@@ -102,7 +105,7 @@ public class loginservletstaff extends HttpServlet {
 	       session.close();
 		}
 		else {
-			System.out.print("CAPTCHA Validation Failed! Try Again.");
+			response.sendRedirect("h5.jsp");
 		}
 	       
 	}

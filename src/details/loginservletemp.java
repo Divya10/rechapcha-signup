@@ -64,16 +64,17 @@ public class loginservletemp extends HttpServlet {
 	      
 	       Query queryResult = session.createQuery("from employee1");
 	       java.util.List allUsers;
-	       String pa,na;
+	       String pa,na="";
 	       int f;
 	       f=0;
-	       
+	       String n="";
 	       allUsers = queryResult.list();
 	       System.out.println(allUsers.size());
 	       for (int i = 0; i < allUsers.size(); i++) {
 	        employee1 user = (employee1) allUsers.get(i);
 	        pa=user.getEmppass();
 	        na=user.getEmpemail();
+	        n=user.getEmpname();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcome");
@@ -87,13 +88,13 @@ public class loginservletemp extends HttpServlet {
 	       if(f==1)
 	       {
 	    	   response.setContentType("text/html");
-		       request.setAttribute("t2", "");
-		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
-
+	    	   request.setAttribute("t2",n);
+		       request.setAttribute("t3",na);
+		       request.getRequestDispatcher("/h6.jsp").forward(request, response);
 	       }    	       
 	       else
 	       {
-	    	   response.sendRedirect("h4.html");
+	    	   response.sendRedirect("h4.jsp");
 	       }
 	       
 	     
@@ -101,7 +102,7 @@ public class loginservletemp extends HttpServlet {
 	       session.close();
 		}
 		else {
-			System.out.print("CAPTCHA Validation Failed! Try Again.");
+			response.sendRedirect("h5.jsp");
 		}
 	       
 	}

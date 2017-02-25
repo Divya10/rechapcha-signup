@@ -111,33 +111,8 @@ color: white;
       </ul>
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
-<form  action="./staff" method=post>
-USERNAME:<br>
-<input type="text" name="Username" placeholder="name">
-<br><br>
-E-MAIL:<br>
-<input type="e-mail" name="E-mail" placeholder="ABC@gmail.com">
-<br><br>
-PASSWORD:<br>
-<input type="password" name="Password" placeholder="***">
-<br><br>
-RE-ENTER PASSWORD:<br>
-<input type="password" name="Pass1" placeholder="***">
-<br>
-<br>
-<center>
-<p>
-  <%
-	ReCaptcha c = ReCaptchaFactory.newReCaptcha(
-       		  	"6LfrshYUAAAAAJXmR5X9QCS1vQ3bsIw7Jh-4CV39", 
-        		"6LfrshYUAAAAAHTrNqufhWI336J_p-E9tYDg7xM-", false);
-	out.print(c.createRecaptchaHtml(null, null));
-   %><br>
-   <button type="submit" class="btn btn-primary btn-md">SIGNUP</button>
-   <button type="button" class="btn btn-primary btn-md">FORGET</button>
-</p>   
-   </center>  
-</form>
+<input type=submit><a href=signup.jsp><font color=red>Not Registered. Click Here</font></a>
+
 </div>
 </body>
 </html>

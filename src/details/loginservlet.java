@@ -97,7 +97,7 @@ public class loginservlet extends HttpServlet {
 	       }    	       
 	       else
 	       {
-	    	   response.sendRedirect("h4.html");
+	    	   response.sendRedirect("h4.jsp");
 	       }
 	       
 	     
@@ -105,7 +105,7 @@ public class loginservlet extends HttpServlet {
 	       session.close();
 		}
 		else {
-			System.out.print("CAPTCHA Validation Failed! Try Again.");
+			response.sendRedirect("h5.jsp");
 		}
 	       
 	}

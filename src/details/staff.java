@@ -103,12 +103,10 @@ public class staff<Userdet> extends HttpServlet {
 		           } 
 		           else
 		           {   System.out.println("duplicate");
-		           response.sendRedirect("h2.html");
+		           response.sendRedirect("h8.jsp");
 		           }
-		}
-		else {
-			System.out.print("CAPTCHA Validation Failed! Try Again.");
-		}
+		
+		
 		            
 			 }   
 
@@ -118,10 +116,14 @@ public class staff<Userdet> extends HttpServlet {
 			System.out.println("pass do not match");
 			System.out.println(pass);
 			System.out.println(repass);
-			 response.sendRedirect("h3.html");
+			 response.sendRedirect("h3.jsp");
 		}
+	}
+	else {
+		response.sendRedirect("h5.jsp");;
+	}
 		
-		}
+}
 	}
 
 
