@@ -115,6 +115,7 @@ color: white;
 USERNAME:<br>
 <input type="text" name="Username" placeholder="name">
 <br><br>
+
 E-MAIL:<br>
 <input type="e-mail" name="E-mail" placeholder="ABC@gmail.com">
 <br><br>
