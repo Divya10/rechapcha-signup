@@ -7,9 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.details.student1;
-import org.details.staff1;
 import org.details.employee1;
+import org.details.staff1;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,16 +18,16 @@ import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
 
 /**
- * Servlet implementation class loginservlet
+ * Servlet implementation class loginservletstaff
  */
-@WebServlet("/loginservlet")
-public class loginservlet extends HttpServlet {
+@WebServlet("/loginservletstaff")
+public class loginservletstaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginservlet() {
+    public loginservletstaff() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,6 +37,7 @@ public class loginservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 	}
 
 	/**
@@ -45,7 +45,6 @@ public class loginservlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		response.setContentType("text/html;charset=UTF-8");
 		String nam=request.getParameter("E-mail");
 		String pas	=request.getParameter("Password");
@@ -64,7 +63,7 @@ public class loginservlet extends HttpServlet {
  	   Session  session =	sessionFactory.openSession();
 	       session.beginTransaction();
 	      
-	       Query queryResult = session.createQuery("from student1");
+	       Query queryResult = session.createQuery("from staff1");
 	       java.util.List allUsers;
 	       String pa,na;
 	       int f;
@@ -73,9 +72,9 @@ public class loginservlet extends HttpServlet {
 	       allUsers = queryResult.list();
 	       System.out.println(allUsers.size());
 	       for (int i = 0; i < allUsers.size(); i++) {
-	        student1 user = (student1) allUsers.get(i);
-	        pa=user.getStpass();
-	        na=user.getStemail();
+	        staff1 user = (staff1) allUsers.get(i);
+	        pa=user.getStaffpass();
+	        na=user.getStaffemail();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcome");
@@ -107,6 +106,8 @@ public class loginservlet extends HttpServlet {
 		}
 	       
 	}
+	
+	
 	}
 
 

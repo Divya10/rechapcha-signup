@@ -58,7 +58,7 @@ color: white;
  <a class="navbar-brand" href="#"><span>RAVIONICS INNOVATION LABS</span></a> 
     </div>
      <ul class="nav navbar-nav navbar-right">
-     <li class="active"><a href="#">Home</a></li>
+     <li class="active"><a href="signup.jsp">Home</a></li>
       <li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="c.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>

@@ -1,7 +1,12 @@
 package org.details;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class staff1 {
 	public String staffname;
+	@Id
 	public String staffemail;
 	public String staffpass;
 	public String staffpass1;

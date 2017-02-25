@@ -13,6 +13,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import net.tanesha.recaptcha.ReCaptchaImpl;
+import net.tanesha.recaptcha.ReCaptchaResponse;
+
 /**
  * Servlet implementation class employee
  */
@@ -44,6 +47,18 @@ public class employee extends HttpServlet {
 		String emppass=request.getParameter("t2");
 		String empemail=request.getParameter("t4");
 		String emppass1=request.getParameter("t3");
+		String remoteAddr = request.getRemoteAddr();
+		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		reCaptcha.setPrivateKey("6LfrshYUAAAAAHTrNqufhWI336J_p-E9tYDg7xM-");
+
+		String challenge = request
+				.getParameter("recaptcha_challenge_field");
+		String uresponse = request.getParameter("recaptcha_response_field");
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(
+				remoteAddr, challenge, uresponse);
+
+		if (reCaptchaResponse.isValid()) {
+
 		if(emppass.equals(emppass1))
 		{
 			
@@ -98,6 +113,10 @@ public class employee extends HttpServlet {
 			System.out.println(emppass);
 			System.out.println(emppass1);
 			 response.sendRedirect("h3.html");
+		}
+		}
+		else {
+			System.out.print("CAPTCHA Validation Failed! Try Again.");
 		}
 		
 		}

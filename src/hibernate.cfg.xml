@@ -32,7 +32,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/Ravionics</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ravionics assignment</property>
         <property name="connection.username">root</property>
         <property name="connection.password">Divy1996@</property>
 
@@ -51,9 +51,9 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
-        <mapping class="details.emoployee1"/>
-        <mapping class="details.staff1"/>
-        <mapping class="details.student1"/>
+        <mapping class="org.details.employee1"/> 
+        <mapping class="org.details.staff1"/>
+        <mapping class="org.details.student1"/>
     </session-factory>
 
 </hibernate-configuration>

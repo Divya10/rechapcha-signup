@@ -13,7 +13,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import net.tanesha.recaptcha.ReCaptchaImpl;
+import net.tanesha.recaptcha.ReCaptchaResponse;
+
+
 /**
+
  * Servlet implementation class staff
  * @param <Userdet>
  */
@@ -41,10 +46,21 @@ public class staff<Userdet> extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name=request.getParameter("t1");
-		String pass=request.getParameter("t2");
-		String email=request.getParameter("t4");
-		String repass=request.getParameter("t3");
+		String name=request.getParameter("Username");
+		String pass=request.getParameter("Password");
+		String email=request.getParameter("E-mail");
+		String repass=request.getParameter("Pass1");
+		String remoteAddr = request.getRemoteAddr();
+		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		reCaptcha.setPrivateKey("6LfrshYUAAAAAHTrNqufhWI336J_p-E9tYDg7xM-");
+
+		String challenge = request
+				.getParameter("recaptcha_challenge_field");
+		String uresponse = request.getParameter("recaptcha_response_field");
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(
+				remoteAddr, challenge, uresponse);
+
+		if (reCaptchaResponse.isValid()) {
 		if(pass.equals(repass))
 		{
 			
@@ -89,6 +105,10 @@ public class staff<Userdet> extends HttpServlet {
 		           {   System.out.println("duplicate");
 		           response.sendRedirect("h2.html");
 		           }
+		}
+		else {
+			System.out.print("CAPTCHA Validation Failed! Try Again.");
+		}
 		            
 			 }   
 
