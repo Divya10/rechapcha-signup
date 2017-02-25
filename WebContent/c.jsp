@@ -129,7 +129,7 @@ PASSWORD:<br>
 	out.print(c.createRecaptchaHtml(null, null));
    %><br>
    <button type="submit" class="btn btn-primary btn-md">LOGIN</button>
-   <button type="button" class="btn btn-primary btn-md">FORGET</button>
+   <button type="button" class="btn btn-primary btn-md" onclick="h9.jsp">FORGET</button>
 </p>   
    </center>  
 </form>

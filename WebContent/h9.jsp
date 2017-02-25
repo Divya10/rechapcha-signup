@@ -58,7 +58,7 @@ color: white;
  <a class="navbar-brand" href="#"><span>RAVIONICS INNOVATION LABS</span></a> 
     </div>
      <ul class="nav navbar-nav navbar-right">
-     <li class="active"><a href="signup.jsp">Home</a></li>
+     <li class="active"><a href="signup1.jsp">Home</a></li>
       <li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="c.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
@@ -111,34 +111,8 @@ color: white;
       </ul>
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
-<form  action="./employee" method=post>
-USERNAME:<br>
-<input type="text" name="Username" placeholder="name">
-<br><br>
+<input type=submit><a href=c.jsp><font color=red>LOGIN DETAILS HAVE BEEN MAILED TO YOU</font></a>
 
-E-MAIL:<br>
-<input type="e-mail" name="E-mail" placeholder="ABC@gmail.com">
-<br><br>
-PASSWORD:<br>
-<input type="password" name="Password" placeholder="***">
-<br><br>
-RE-ENTER PASSWORD:<br>
-<input type="password" name="Pass1" placeholder="***">
-<br>
-<br>
-<center>
-<p>
-  <%
-	ReCaptcha c = ReCaptchaFactory.newReCaptcha(
-       		  	"6LfrshYUAAAAAJXmR5X9QCS1vQ3bsIw7Jh-4CV39", 
-        		"6LfrshYUAAAAAHTrNqufhWI336J_p-E9tYDg7xM-", false);
-	out.print(c.createRecaptchaHtml(null, null));
-   %><br>
-   <button type="submit" class="btn btn-primary btn-md">SIGNUP</button>
-  
-</p>   
-   </center>  
-</form>
 </div>
 </body>
 </html>

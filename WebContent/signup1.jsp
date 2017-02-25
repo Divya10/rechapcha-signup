@@ -134,7 +134,7 @@ RE-ENTER PASSWORD:<br>
 	out.print(c.createRecaptchaHtml(null, null));
    %><br>
    <button type="submit" class="btn btn-primary btn-md">SIGNUP</button>
-   <button type="button" class="btn btn-primary btn-md">FORGET</button>
+   
 </p>   
    </center>  
 </form>
