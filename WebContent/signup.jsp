@@ -59,8 +59,8 @@ color: white;
     </div>
      <ul class="nav navbar-nav navbar-right">
      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="c.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
   </div>
@@ -111,7 +111,7 @@ color: white;
       </ul>
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
-<form  action="./validate.jsp" method=post>
+<form  action="./student" method=post>
 USERNAME:<br>
 <input type="text" name="Username" placeholder="name">
 <br><br>

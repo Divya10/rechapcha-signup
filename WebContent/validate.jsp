@@ -6,6 +6,11 @@
 <title>CAPTCHA in Java using reCAPTCHA</title>
 </head>
 <body>
+<form  action="./student" method=post >
+<input type="hidden" name="Username" id="Username" value="<%=request.getParameter("Username")%>" />
+<input type="hidden" name="E-mail" id="E-mail" value="<%=request.getParameter("E-mail")%>" />
+<input type="hidden" name="Password" id="Password" value="<%=request.getParameter("Password")%>" />
+<input type="hidden" name="Pass1" id="Pass1" value="<%=request.getParameter("Pass1")%>" />
 <h2>CAPTCHA in Java Application using reCAPTCHA</h2>
 <p>
 	<%
@@ -19,14 +24,11 @@
 		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(
 				remoteAddr, challenge, uresponse);
 
-		if (reCaptchaResponse.isValid()) {
-			String a= request.getParameter("Username");
-			String b= request.getParameter("E-mail");
-			String c= request.getParameter("Password");
-			String d= request.getParameter("Pass1");
+		if (reCaptchaResponse.isValid()) {%>
+			<div onLoad= documnt.form.submit()></div>
 			
 			
-		} else {
+	  <%} else {
 			out.print("CAPTCHA Validation Failed! Try Again.");
 		}
 	%>

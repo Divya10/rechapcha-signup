@@ -105,26 +105,21 @@ color: white;
 </div><br><br>
 <div  class="sidenav" style="float:left;">
       <ul >
-        <li><a href="signup.jsp">STUDENT</a></li>
-        <li><a href="signup1.jsp">FACULTY</a></li>
-        <li><a href="signup2.jsp">ADMIN</a></li>
+        <li><a href="c.jsp">STUDENT</a></li>
+        <li><a href="login1.jsp">FACULTY</a></li>
+        <li><a href="login2.jsp">ADMIN</a></li>
       </ul>
     </div>
  <div class=me style="float: right; margin-right:190px; display: inline-block;  ">
 <form  action="./validate.jsp" method=post>
-USERNAME:<br>
-<input type="text" name="Username" placeholder="name">
-<br><br>
+
 E-MAIL:<br>
 <input type="e-mail" name="E-mail" placeholder="ABC@gmail.com">
 <br><br>
 PASSWORD:<br>
 <input type="password" name="Password" placeholder="***">
 <br><br>
-RE-ENTER PASSWORD:<br>
-<input type="password" name="Pass1" placeholder="***">
-<br>
-<br>
+
 <center>
 <p>
   <%

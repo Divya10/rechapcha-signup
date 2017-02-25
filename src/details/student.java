@@ -12,7 +12,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+ import net.tanesha.recaptcha.ReCaptchaImpl;
+ import net.tanesha.recaptcha.ReCaptchaResponse;
 /**
  * Servlet implementation class student
  */
@@ -40,10 +41,22 @@ public class student extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String stname=request.getParameter("t1");
-		String stpass=request.getParameter("t2");
-		String stemail=request.getParameter("t4");
-		String stpass1=request.getParameter("t3");
+		String stname=request.getParameter("Username");
+		String stpass=request.getParameter("Password");
+		String stemail=request.getParameter("E-mail");
+		String stpass1=request.getParameter("Pass1");
+		String remoteAddr = request.getRemoteAddr();
+		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		reCaptcha.setPrivateKey("6LfrshYUAAAAAHTrNqufhWI336J_p-E9tYDg7xM-");
+
+		String challenge = request
+				.getParameter("recaptcha_challenge_field");
+		String uresponse = request.getParameter("recaptcha_response_field");
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(
+				remoteAddr, challenge, uresponse);
+
+		if (reCaptchaResponse.isValid()) {
+			
 		if(stpass.equals(stpass1))
 		{
 			
@@ -101,6 +114,11 @@ public class student extends HttpServlet {
 		}
 		
 		}
+		else {
+			System.out.print("CAPTCHA Validation Failed! Try Again.");
+		}
+	}
+	
 	}
 
 
